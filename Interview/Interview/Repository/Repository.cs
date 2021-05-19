@@ -37,7 +37,7 @@ namespace Interview.Repository
 
         public T FindById(IComparable id)
         {
-            return _entities.FirstOrDefault(e => e.Id.Equals(id));
+            return _entities.ToList().Find(e => id.Equals(e.Id));
         }
 
         public void Save(T item)
